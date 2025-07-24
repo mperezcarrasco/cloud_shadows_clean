@@ -56,8 +56,7 @@ def get_dataloader(
     assert any(x in ["plumes", "cloud_shadow_mask", "cloud_mask", "dark_surface_mask"] for x in mask_types)
     
     obj_list = np.load(base_path + "/mask_list.npy").tolist()
-    
-    obj_list = obj_list
+
     scaler = None if norm_type in ["none", "l_norm_clip"] else joblib.load(f"{base_path}/scaler_{norm_type}.pkl")
     class_map = {type_: i + 1 for i, type_ in enumerate(mask_types)}  # label 0 reserved for normal objects
 
@@ -194,8 +193,8 @@ def save_individual_image_plot(data, mask, pred, color_maps_rgb, inv_map, sample
     # Save the figure
     filename = f"image_sample_{sample_idx+1:03d}.png"
     filepath = os.path.join(output_folder, filename)
-    #plt.savefig(filepath, dpi=300, bbox_inches='tight')
-    plt.show()
+    plt.savefig(filepath, dpi=300, bbox_inches='tight')
+    #plt.show()
     plt.close()
     
     print(f"Saved: {filepath}")
@@ -282,7 +281,7 @@ def create_individual_plots_efficiently(val_loader, model, device, model_name, c
 
 
 if torch.cuda.is_available():
-    device = "cuda:1"
+    device = "cuda"
 elif torch.backends.mps.is_available():
     device = "mps"
 else:
@@ -325,7 +324,7 @@ model = build_network(
     hidden_dims,
 )
 print(model)
-cpkt = torch.load("{}/checkpoint_best.pth".format(directory))
+cpkt = torch.load("{}/checkpoint_best.pth".format(directory), weights_only=False)
 model.load_state_dict(cpkt["model"])
 model.to(device)
 

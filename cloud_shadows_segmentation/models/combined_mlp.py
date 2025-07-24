@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from typing import List
 from models.unet import Unet
-from hyperspectral_artifact_removal.models.scan import SpectralChannelAttentionNetwork
+from models.scan import SpectralChannelAttentionNetwork
 
 
 class CombinedModel(nn.Module):
