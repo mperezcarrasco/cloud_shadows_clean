@@ -1,7 +1,7 @@
 model_names: ["scan"]
 weights: [True]
 norm_types: ["none"]
-lrs: [1e-4, 5e-4, 1e-3]
+lrs: [1e-3]
 n_folds: 3
 finetune: False
 n_parallel_training: 0

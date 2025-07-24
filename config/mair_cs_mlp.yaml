@@ -1,9 +1,10 @@
 model_names: ["mlp"]
 weights: [True]
 norm_types: ["std_full"]
-lrs: [1e-3, 5e-3, 1e-2]
+lrs: [1e-2]
 n_folds: 3
 finetune: False
+n_parallel_training: 0
 fixed_params:
   data_dir: "data/mair_cs"
   run_dir: "experiments/mair_cs"

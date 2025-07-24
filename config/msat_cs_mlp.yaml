@@ -1,7 +1,7 @@
 model_names: ["mlp"]
 weights: [True]
 norm_types: ["none"]
-lrs: [1e-4, 5e-4, 1e-3, 1e-2]
+lrs: [1e-2]
 n_folds: 3
 finetune: False
 n_parallel_training: 0

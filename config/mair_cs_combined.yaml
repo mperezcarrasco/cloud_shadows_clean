@@ -1,7 +1,7 @@
-model_names: ["ilr"]
+model_names: ["combined_mlp", "combined_cnn"]
 weights: [True]
 norm_types: ["std_full"]
-lrs: [1e-3]
+lrs: [5e-4]
 n_folds: 3
 finetune: False
 n_parallel_training: 0

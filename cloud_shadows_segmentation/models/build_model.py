@@ -2,7 +2,6 @@ from models.hyperspectral_logreg import HyperspectralLogisticRegressionModel
 from models.scan import SpectralChannelAttentionNetwork
 from models.combined_mlp import create_combined_model
 from models.combined_cnn import create_combined_model_cnn
-from models.ViT_Segformer import SegFormerViT
 from models.unet import Unet
 
 
@@ -21,7 +20,6 @@ def build_network(
         "scan",
         "combined_mlp",
         "combined_cnn",
-        "segformervit",
     )
     assert model_name in implemented_networks
 
@@ -39,8 +37,6 @@ def build_network(
         )
     elif model_name == "unet":
         model = Unet(in_dim, num_classes)
-    elif model_name == "segformervit":
-        model = SegFormerViT(in_dim, num_classes)
     elif model_name == "combined_mlp":
         model = create_combined_model(in_dim, num_classes, fold)
     elif model_name == "combined_cnn":

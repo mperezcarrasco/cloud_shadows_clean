@@ -45,7 +45,7 @@ The cloud and shadow detection system processes MethaneAIR and MethaneSAT L1B hy
     └── msat_cs/                           # MethaneSAT data
 ```
 
-## Key Results (Published)
+## Key Results
 
 Our comprehensive evaluation demonstrates state-of-the-art performance across multiple model architectures:
 
@@ -121,7 +121,7 @@ python cloud_shadows_detection/train.py \
     --weighted
 ```
 
-**Reproduce all paper results:**
+**Reproduce paper results:**
 ```bash
 # MethaneAIR experiments
 python run_experiment.py --config config/mair_cs_scan.yaml

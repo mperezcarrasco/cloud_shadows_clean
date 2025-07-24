@@ -430,12 +430,12 @@ def train_cli(**kwargs):
     logger.info(f"Final validation metrics:\n{print_metrics(metrics)}")
     save_metrics(directory, metrics, "val")
     # Final testing.
-    if (
+
+    if "msat_cs" in kwargs["data_dir"] and (
         kwargs["model_name"] == "scan"
         or kwargs["model_name"] == "unet"
         or kwargs["model_name"] == "combined_mlp"
         or kwargs["model_name"] == "combined_cnn"
-        or kwargs["model_name"] == "segformervit"
     ):
         preds, labels = prediction_model_with_patches(
             kwargs["model_name"],

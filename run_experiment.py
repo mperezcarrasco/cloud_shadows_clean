@@ -31,7 +31,7 @@ def format_lr(lr):
 def launch_experiment(experiment_config: Dict[str, Any]) -> Dict[str, Any]:
     cmd = [
         PYTHON,
-        "cloud_shadows_detection/train.py",
+        "cloud_shadows_segmentation/train.py",
         f"--data_dir={experiment_config['data_dir']}",
         f"--model_name={experiment_config['model_name']}",
         f"--run_dir={experiment_config['run_dir']}",
