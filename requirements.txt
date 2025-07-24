@@ -1,0 +1,14 @@
+typing
+click
+h5py
+matplotlib
+numpy
+pandas
+scikit-learn
+scipy
+netCDF4
+kornia
+imblearn
+seaborn
+geopandas==0.13.2
+einops

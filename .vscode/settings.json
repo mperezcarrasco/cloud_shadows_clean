@@ -1,0 +1,22 @@
+{
+    //...
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "flake8.args": [
+        "--max-line-length",
+        "100",
+        "--extend-ignore",
+        "w503",
+        "--ignore",
+        "E203"
+    ],
+    "black-formatter.args": [
+        "--line-length",
+        "100"
+    ],
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic"
+    //...
+}

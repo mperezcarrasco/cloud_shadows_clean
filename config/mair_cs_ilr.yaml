@@ -1,0 +1,14 @@
+model_names: ["ilr"]
+weights: [True]
+norm_types: ["std_full"]
+lrs: [1e-3, 5e-3, 1e-2]
+n_folds: 3
+finetune: False
+fixed_params:
+  data_dir: "data/mair_cs"
+  run_dir: "experiments/mair_cs"
+  batch_size: 32
+  n_workers: 2
+  in_dim: 1024
+  hidden_dims: "none"
+  use_amp: False
